@@ -175,7 +175,7 @@ class LSH(var dataset: List[DataVector], private val hashFamily: HashFamily) {
     lshSearchTime /= 1000.0
     val hashes = index.getNumberOfHashes
     val hashTables = index.getNumberOfHashTables
-    System.out.printf("%10d%15d%9.2f%%%9.2f%%%9.4fs%9.4fs%9.2f%%%9.2f%%\n", hashes, hashTables, percentageCorrect, percentageTouched, linearSearchTime, lshSearchTime, precision, recall)
+    //System.out.printf("%10d%15d%9.2f%%%9.2f%%%9.4fs%9.4fs%9.2f%%%9.2f%%\n", hashes, hashTables, percentageCorrect, percentageTouched, linearSearchTime, lshSearchTime, precision, recall)
   }
 
   def query(query: DataVector, neighboursSize: Int): List[DataVector] = index.query(query, neighboursSize)

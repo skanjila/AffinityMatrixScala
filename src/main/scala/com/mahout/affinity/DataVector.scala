@@ -31,6 +31,16 @@ class DataVector(var key: String, var values: Array[Double])
   def set(dimension: Int, value: Double) {
     values(dimension) = value
   }
+  
+  def getKey():String ={
+    return key
+  }
+  
+  def setKey(keyToSet:String): Unit = {
+    if (keyToSet!=null) {
+      key=keyToSet
+    }
+  }
 
   def get(dimension: Int): Double = values(dimension)
 
