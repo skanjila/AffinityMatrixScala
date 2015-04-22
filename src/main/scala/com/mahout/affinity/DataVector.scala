@@ -15,6 +15,17 @@ class DataVector(var key: String, var values: Array[Double])
     this(null, Array.ofDim[Double](dimensions))
   }
 
+  def getKey:String= {
+    return key
+  }
+  
+  def setKey(keyToSet:String)= {
+    if (keyToSet!=" ") {
+      key=keyToSet
+    }
+  }
+  
+  
   def this(other: DataVector) {
     this(other.getKey, Arrays.copyOf(other.values, other.values.length))
   }
@@ -30,16 +41,6 @@ class DataVector(var key: String, var values: Array[Double])
 
   def set(dimension: Int, value: Double) {
     values(dimension) = value
-  }
-  
-  def getKey():String ={
-    return key
-  }
-  
-  def setKey(keyToSet:String): Unit = {
-    if (keyToSet!=null) {
-      key=keyToSet
-    }
   }
 
   def get(dimension: Int): Double = values(dimension)
